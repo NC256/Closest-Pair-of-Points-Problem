@@ -13,7 +13,7 @@ Admittedly not the most exciting problem, but it has some attributes that make i
 * It's very simple to understand.
 * Verifying you have the correct answer is easy to do.
 * The brute force solution is very short.
-* The divide-and-conquer solution is soooooo much faster than the brute force solution.
+* The divide-and-conquer solution is so much faster than the brute force solution.
 
 # So how do you find the answer?
 
