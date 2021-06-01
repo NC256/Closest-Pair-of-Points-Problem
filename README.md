@@ -2,7 +2,7 @@
 
 This is a solution to the [closest pair of points problem](https://en.wikipedia.org/wiki/Closest_pair_of_points_problem) in [O](https://en.wikipedia.org/wiki/Big_O_notation)(*n* log *n*) time complexity using a divide and conquer approach. The divide and conquer algorithm is based on the description contained in [Introduction to Algorithms, Third Edition](https://mitpress.mit.edu/books/introduction-algorithms-third-edition), section 33.4. The book credits [Computational Geometry: An Introduction](https://dl.acm.org/doi/10.5555/4333) as the source of the algorithm.
 
-I wrote this code in late 2019 for my collge algorithms class. It was one of my favorite assignments from that course because I was able to put in extra time to really understand the algorithm and implement it well. It was also really fun to see how much of an improvement the longer more complicated algorithm was over the extremely short brute force algorithm.
+I wrote this code in late 2019 for my college algorithms class. It was one of my favorite assignments from that course because I was able to put in extra time to really understand the algorithm and implement it well. It was also really fun to see how much of an improvement the longer more complicated algorithm was over the extremely short brute force algorithm.
 
 # What is the Closest Pair of Points Problem?
 
@@ -26,7 +26,7 @@ It's worth looking at the brute force solution first. It works like this:
 2. As you go along, keep track of the closest points you're finding.
 3. Once you've done every single comparison you should know which points are the closest.
 
-A saavy reader might ask, "How do we 'compare' the points to each other?". And that's a good question. In real life we might pull out a ruler, but computers don't have that luxury. Fortunately mathematicians figured it out a long time ago. The explanation of the equation is beyond this writeup, but you can find it on Wikipedia [here](https://en.wikipedia.org/wiki/Euclidean_distance#Two_dimensions).
+A savvy reader might ask, "How do we 'compare' the points to each other?". And that's a good question. In real life we might pull out a ruler, but computers don't have that luxury. Fortunately, mathematicians figured it out a long time ago. The explanation of the equation is beyond this write-up, but you can find it on Wikipedia [here](https://en.wikipedia.org/wiki/Euclidean_distance#Two_dimensions).
 ### Code?
 
 What's this look like in code?
@@ -46,9 +46,9 @@ for (Point p : thePoints){     // Loop over every point
   }
 }
 ```
-This isn't meant to be exact code, but hopefully it gives you an example of what brute force looks like. You can write it slightly more efficiently, but no matter what you do with this approach the runtime complexity always be O(n^2). That means that if you have 50 points to compare, this code will calculate the distance roughly 50\*50 times. That's not terrible, but if you were working with 100,000 points that would mean 100,000\*100,000 comparisons. 
+This isn't meant to be exact code, but hopefully it gives you an example of what brute force looks like. You can write it slightly more efficiently, but no matter what you do with this approach the runtime complexity will always be O(n^2). That means that if you have 50 points to compare, this code will calculate the distance roughly 50\*50 times. That's not terrible, but if you were working with 100,000 points that would mean 100,000\*100,000 comparisons. 
 
-Oh and if you want to see exact code, it's included in [the source code](src/Main.java). See the method called bruteForce, around line ~202.
+Oh, and if you want to see the exact code, it's included in [the source code](src/Main.java). See the method called bruteForce, around line ~202.
 
 How fast is Brute force then?
 Number of points | Time Taken (On my computer)
@@ -58,7 +58,7 @@ Number of points | Time Taken (On my computer)
 50,000|15 seconds
 500,000|36 **minutes**
 
-Uh oh, this is quickly becoming unsuable. Lets see what Divide and Conquer has to offer:
+Uh oh, this is quickly becoming unusable. Let's see what Divide and Conquer has to offer:
 
 ## Divide and Conquer
  
@@ -97,4 +97,4 @@ Number of points | Time Taken (Brute Force) | Time Taken (Divide And Conquer)
 
 I told you it was worth it!
 
-Fun fact, brute force is actually faster when the number of points is small. The divide and conquer algorithm requires more setup and processing, which makes it a worse choise with a small number of points. When I first wrote the code I found through testing that anything below ~600 points was faster with brute force, but after that divide and conquer took the victory every single time.
+Fun fact, brute force is actually faster when the number of points is small. The divide and conquer algorithm requires more setup and processing, which makes it a worse choice with a small number of points. When I first wrote the code I found through testing that anything below ~600 points was faster with brute force, but after that divide and conquer took the victory every single time.
