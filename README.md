@@ -40,7 +40,7 @@ for (Point p : thePoints){     // Loop over every point
       continue;  // Skip this loop since we don't want to compare a point to itself
     }
     double distance = distanceBetween(p,q); // Calculate the distance with some function (not shown here)
-    if (distance < shortestSoFar){          // If it's shorter than the shortest we've found so far, then save it
+    if (distance < shortestSoFar){          // If it's shorter than the shortest we've found so far, save it
       shortestSoFar = distance;
     }
   }
